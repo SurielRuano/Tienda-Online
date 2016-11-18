@@ -8,7 +8,7 @@ def product_list(request,category_slug=None):
 	category = None
 
 	categories = Category.objects.all()
-	products = Product.objects.filter(avaible=True)
+	products = Product.objects.filter(available=True)
 
 	if category_slug:
 
@@ -17,12 +17,12 @@ def product_list(request,category_slug=None):
 	template_name = 'shop/product/list.html'
 	context = {'category':category,'categories':categories,'products':products}
 
-	return render(request,template_name)
+	return render(request,template_name,context)
 
 
 def product_detail(request, id, slug):
 
-	product =  get_object_or_404(Product,id=id,slug=slug,avaible=True)
+	product =  get_object_or_404(Product,id=id,slug=slug,available=True)
 	template_name = 'shop/product/detail.html'
 	context = {'product':product}
 
