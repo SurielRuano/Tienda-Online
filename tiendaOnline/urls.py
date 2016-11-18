@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from . import urls as shopUrls
+from shop import urls as shopUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
