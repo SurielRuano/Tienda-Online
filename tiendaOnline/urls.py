@@ -18,10 +18,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from shop import urls as shopUrls
+from cart import urls as cartUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^',include(shopUrls,namespace="shop")),
+    url(r'^cart/',include(cartUrls,namespace='cart')),
 ]
 
 if settings.DEBUG:
